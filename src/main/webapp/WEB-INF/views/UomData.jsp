@@ -5,11 +5,12 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>UOM Edit Page</title>
+<title>UOM Data Page</title>
 </head>
 <body>
-<h3>Welcome to Uom Edit Page</h3>
+<h3>Welcome to Uom Data Page</h3>
 <hr>
+<a href="excel">Export to Excel</a>|<a href="pdf">Export to Pdf</a>
 <c:choose>
 <c:when test="${!empty list }">
 <table border="1">

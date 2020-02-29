@@ -6,23 +6,12 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>WhUserType Register page </title>
-
-<style type="text/css">
-
-input[type=radio]
-{
-display:inline;
-}
-
-</style>
-
 </head>
 <body>
-
-<body>
 	<h2>Welcome to  WhUserType Register Page</h2>
-	<form:form action="save" method="post" modelAttribute="whUserType">
-		<pre>
+<hr>
+<form:form action="save" method="post" modelAttribute="whUserType">
+<pre>
 User Type   :<form:radiobutton path="userType" value="vendor" />Vendor
  	     <form:radiobutton path="userType" value="Customer" />Customer
 User Code   :<form:input path="userCode"/>
@@ -41,8 +30,10 @@ Number      :<form:input path="idNumber"/>
 	
 <input type="submit" value="CREATE WHUSER">
 </pre>
-	</form:form>
+</form:form>
+<hr>	
 	${message}
+<hr>	
 <a href="all">View WhUser Data</a>
 </body>
 </html>

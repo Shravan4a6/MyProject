@@ -10,8 +10,9 @@
 <body>
 	<h2>Welcome to OrderMethod Register Page</h2>
 <hr>
-	<form:form action="save" method="post" modelAttribute="orderMethod">
+	<form:form action="update" method="post" modelAttribute="orderMethod">
 <pre>
+Order  Id:<form:input path="orderId" readonly="true"/>
 Order Mode  :<form:radiobutton path="orderMode" value="SALE" />SALE
  	     <form:radiobutton path="orderMode" value="PURCHASE" />PURCHASE
 Order Code  :<form:input path="orderCode"/>
@@ -28,7 +29,7 @@ Order Accept:<form:checkbox path="orderAccept" value="Multi-Model"/>Multi-Model
 Description :
              <form:textarea path="description"/>
 	
-	<input type="submit" value="Create OrderMethod">
+	<input type="submit" value="UPDATE OrderMethod">
 </pre>
 	</form:form>
 <hr>

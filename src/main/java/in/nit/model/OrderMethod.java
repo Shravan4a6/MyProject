@@ -41,6 +41,13 @@ public class OrderMethod {
 		super();
 	}
 
+	
+	public OrderMethod(Integer orderId) {
+		super();
+		this.orderId = orderId;
+	}
+
+
 	public Integer getOrderId() {
 		return orderId;
 	}

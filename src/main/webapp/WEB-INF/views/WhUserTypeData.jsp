@@ -10,6 +10,7 @@
 <body>
 <h3>Welcome to WhUserType Data Page</h3>
 <hr>
+<a href="excel">Export to Excel</a>|<a href="pdf">Export to Pdf</a>
 <c:choose>
 <c:when test="${!empty list }">
 

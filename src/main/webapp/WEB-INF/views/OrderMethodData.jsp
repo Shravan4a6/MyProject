@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h3>Welcome to ShipmentType Data Page</h3>
+<h3>Welcome to OrderMethod Data Page</h3>
 <a href="excel">Export to Excel</a>|<a href="pdf">Export to Pdf</a>
 <c:choose>
 <c:when test="${!empty list }">
@@ -18,23 +18,23 @@
 	<th>ID</th>
 	<th>MODE</th>
 	<th>CODE</th>
-	<th>ENABLE</th>
-	<th>GRADE</th>
+	<th>TYPE</th>
+	<th>ACCEPT</th>
 	<th>NOTE</th>
 	<th colspan="3">OPERATIONS</th>
 	</tr>
 	
 <c:forEach items="${list }" var="ob">
 	<tr>
-		<td>${ob.shipId }</td>
-		<td>${ob.shipMode }</td>
-		<td>${ob.shipCode }</td>
-		<td>${ob.enbShip }</td>
-		<td>${ob.shipGrade }</td>
-		<td>${ob.shipDesc }</td>
-		<td><a href="delete?sid=${ob.shipId }">DELETE</a></td>
-		<td><a href="edit?sid=${ob.shipId }">EDIT</a></td>
-		<td><a href="view?sid=${ob.shipId }">VIEW</a></td>
+		<td>${ob.orderId }</td>
+		<td>${ob.orderMode }</td>
+		<td>${ob.orderCode }</td>
+		<td>${ob.orderType }</td>
+		<td>${ob.orderAccept }</td>
+		<td>${ob.description }</td>
+		<td><a href="delete?oid=${ob.orderId }">DELETE</a></td>
+		<td><a href="edit?oid=${ob.orderId }">EDIT</a></td>
+		<td><a href="view?oid=${ob.orderId }">VIEW</a></td>
 
 	</tr>
 </c:forEach>

@@ -7,10 +7,10 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>UOM Register Page</title>
+<title>UOM Edit Page</title>
 </head>
 <body>
-	<h2>Welcome to UOM Register Page</h2>
+	<h2>Welcome to UOM Edit Page</h2>
 <hr>
 	<form:form action="update" method="post" modelAttribute="uom">
 		<pre>
