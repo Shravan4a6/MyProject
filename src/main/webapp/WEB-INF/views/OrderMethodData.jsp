@@ -9,7 +9,8 @@
 </head>
 <body>
 <h3>Welcome to OrderMethod Data Page</h3>
-<a href="excel">Export to Excel</a>|<a href="pdf">Export to Pdf</a>
+<!-- <a href="excel">Export to Excel</a>|<a href="pdf">Export to Pdf</a> -->
+<a href="excel"><img alt="" src="../resources/images/ExcelDownload.png" width="60" height="30" /></a>|<a href="pdf"><img alt="" src="../resources/images/PdfDownload.png" width="60" height="30" /></a>
 <c:choose>
 <c:when test="${!empty list }">
 
@@ -32,9 +33,9 @@
 		<td>${ob.orderType }</td>
 		<td>${ob.orderAccept }</td>
 		<td>${ob.description }</td>
-		<td><a href="delete?oid=${ob.orderId }">DELETE</a></td>
-		<td><a href="edit?oid=${ob.orderId }">EDIT</a></td>
-		<td><a href="view?oid=${ob.orderId }">VIEW</a></td>
+		<td><a href="delete?oid=${ob.orderId }"><img alt="" src="../resources/images/DELETE.jpg" width="35" height="30" /></a></td>
+		<td><a href="edit?oid=${ob.orderId }"><img alt="" src="../resources/images/EDIT.jpg" width="35" height="30" /></a></td>
+		<td><a href="view?oid=${ob.orderId }"><img alt="" src="../resources/images/VIEW.jpg" width="35" height="30" /></a></td>
 
 	</tr>
 </c:forEach>

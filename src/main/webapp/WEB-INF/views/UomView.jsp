@@ -24,7 +24,7 @@
 </tr>
 </table>
 <hr>
-<a href="excel?id=${ob.uomId}">Export to EXCEL</a>|<a href="pdf?id=${ob.uomId}">Export to PDF</a>
+<a href="excel?id=${ob.uomId}"><img alt="" src="../resources/images/ExcelDownload.png" width="60" height="30" /></a>|<a href="pdf?id=${ob.uomId}"><img alt="" src="../resources/images/PdfDownload.png" width="60" height="30" /></a>
 <hr>
            <a href="register">HOME PAGE</a>
 </body>

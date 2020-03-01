@@ -10,7 +10,8 @@
 <body>
 <h3>Welcome to Uom Data Page</h3>
 <hr>
-<a href="excel">Export to Excel</a>|<a href="pdf">Export to Pdf</a>
+<!-- <a href="excel">Export to Excel</a>|<a href="pdf">Export to Pdf</a> -->
+<a href="excel"><img alt="" src="../resources/images/ExcelDownload.png" width="60" height="30" /></a>|<a href="pdf"><img alt="" src="../resources/images/PdfDownload.png" width="60" height="30" /></a>
 <c:choose>
 <c:when test="${!empty list }">
 <table border="1">
@@ -27,9 +28,9 @@
 <td>${ob.uomType }</td>
 <td>${ob.uomModel }</td>
 <td>${ob.uomDesc }</td>
-<td><a href="delete?uid=${ob.uomId }">DELETE</a></td>
-<td><a href="edit?uid=${ob.uomId }">EDIT</a></td>
-<td><a href="view?uid=${ob.uomId }">VIEW</a></td>
+<td><a href="delete?uid=${ob.uomId }"><img alt="" src="../resources/images/DELETE.jpg" width="35" height="30" /></a></td>
+<td><a href="edit?uid=${ob.uomId }"><img alt="" src="../resources/images/EDIT.jpg" width="35" height="30" /></a></td>
+<td><a href="view?uid=${ob.uomId }"><img alt="" src="../resources/images/VIEW.jpg" width="35" height="30" /></a></td>
 </tr>
 </c:forEach>
 </table>
