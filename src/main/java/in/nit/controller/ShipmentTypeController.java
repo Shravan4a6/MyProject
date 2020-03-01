@@ -1,5 +1,6 @@
 package in.nit.controller;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -104,27 +105,40 @@ public class ShipmentTypeController {
 	}
 
 	@RequestMapping("/excel")
-	public ModelAndView showExcel()
+	public ModelAndView showExcel(@RequestParam(value = "id",
+	required =false)Integer id)
 	{
 		ModelAndView mav=new ModelAndView();
 		mav.setView(new ShipmentTypeExcelView());
-
-		List<ShipmentType> list=service.getAllShipmentTypes();
-		mav.addObject("list", list);
+		if(id==null)
+		{
+			List<ShipmentType> list=service.getAllShipmentTypes();
+			mav.addObject("list", list);
+		}
+		else
+		{
+			ShipmentType st=service.getOneShipmentType(id);
+			mav.addObject("list", Arrays.asList(st));
+		}
 		return mav;
-
 	}
-
 	@RequestMapping("/pdf")
-	public ModelAndView showPdf()
+	public ModelAndView showPdf(@RequestParam(value = "id",
+	required = false)Integer id)
 	{
 		ModelAndView mav=new ModelAndView();
 		mav.setView(new ShipmentTypePdfView());
-		
-		List<ShipmentType> list=service.getAllShipmentTypes();
-		mav.addObject("list", list);
-		
+		if(id==null)
+		{
+			List<ShipmentType> list=service.getAllShipmentTypes();
+			mav.addObject("list", list);
+		}
+		else
+		{
+			ShipmentType st=service.getOneShipmentType(id);
+			mav.addObject("list", Arrays.asList(st));
+		}
 		return mav;
 	}
-
+	
 }

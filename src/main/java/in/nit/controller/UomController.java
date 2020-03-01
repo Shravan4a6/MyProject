@@ -1,5 +1,6 @@
 package in.nit.controller;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -104,24 +105,40 @@ public class UomController {
 	}
 
 	@RequestMapping("/excel")
-	public ModelAndView showExcel()
+	public ModelAndView showExcel(@RequestParam(value = "id",
+	required =false)Integer id)
 	{
 		ModelAndView mav=new ModelAndView();
-
 		mav.setView(new UomExcelView());
-		List<Uom> list=service.getAllUoms();
-		mav.addObject("list", list);
+		if(id==null)
+		{
+			List<Uom> list=service.getAllUoms();
+			mav.addObject("list", list);
+		}
+		else
+		{
+			Uom um=service.getOneUom(id);
+			mav.addObject("list", Arrays.asList(um));
+		}
 		return mav;
-
 	}
 
 	@RequestMapping("/pdf")
-	public ModelAndView showPdf()
+	public ModelAndView showPdf(@RequestParam(value = "id",
+	required = false)Integer id)
 	{
 		ModelAndView mav=new ModelAndView();
 		mav.setView(new UomPdfView());
-		List<Uom> list=service.getAllUoms();
-		mav.addObject("list", list);
+		if(id==null)
+		{
+			List<Uom> list=service.getAllUoms();
+			mav.addObject("list", list);
+		}
+		else
+		{
+			Uom um=service.getOneUom(id);
+			mav.addObject("list", Arrays.asList(um));
+		}
 		return mav;
 	}
 }

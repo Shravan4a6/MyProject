@@ -28,5 +28,9 @@
 	<th>NOTE</th><td>${ob.shipDesc}</td>
 </tr>
 </table>
+<hr>
+<a href="excel?id=${ob.shipId}">Export to EXCEL</a>|<a href="pdf?id=${ob.shipId}">Export to PDF</a>
+<hr>
+           <a href="register">HOME PAGE</a>
 </body>
 </html>

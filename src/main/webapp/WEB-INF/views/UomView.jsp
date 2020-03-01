@@ -24,6 +24,8 @@
 </tr>
 </table>
 <hr>
-<a href="all">UOM data Page</a>
+<a href="excel?id=${ob.uomId}">Export to EXCEL</a>|<a href="pdf?id=${ob.uomId}">Export to PDF</a>
+<hr>
+           <a href="register">HOME PAGE</a>
 </body>
 </html>

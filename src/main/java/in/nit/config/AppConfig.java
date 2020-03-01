@@ -14,6 +14,7 @@ import org.springframework.orm.hibernate5.HibernateTemplate;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @Configuration
@@ -42,7 +43,7 @@ public class AppConfig {
 		//s.setAnnotatedClasses(ShipmentType.class,Uom.class,WhUserType.class,OrderMethod.class);
 
 		s.setPackagesToScan("in.nit.model"); 
-		
+
 		return s;
 	}
 	@Bean
@@ -74,4 +75,11 @@ public class AppConfig {
 		v.setSuffix(env.getProperty("mvc.suffix"));
 		return v;
 	}
+
+	@Bean
+	public CommonsMultipartResolver multipartResolver()
+	{
+		return new CommonsMultipartResolver();
+	}
+
 }

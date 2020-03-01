@@ -38,6 +38,8 @@
 </tr>
 </table>
 <hr>
-<a href="all">WhUser Data Page</a>
+<a href="excel?id=${ob.userId}">Export to EXCEL</a>|<a href="pdf?id=${ob.userId}">Export to PDF</a>
+<hr>
+           <a href="register">HOME PAGE</a>
 </body>
 </html>

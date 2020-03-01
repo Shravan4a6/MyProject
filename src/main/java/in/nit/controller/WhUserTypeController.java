@@ -1,5 +1,6 @@
 package in.nit.controller;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -100,24 +101,40 @@ public class WhUserTypeController {
 	}
 
 	@RequestMapping("/excel")
-	public ModelAndView showExcel()
+	public ModelAndView showExcel(@RequestParam(value = "id",
+	required =false)Integer id)
 	{
 		ModelAndView mav=new ModelAndView();
 		mav.setView(new WhUserTypeExcelView());
-
-		List<WhUserType> list=service.getAllWhUserTypes();
-		mav.addObject("list", list);
+		if(id==null)
+		{
+			List<WhUserType> list=service.getAllWhUserTypes();
+			mav.addObject("list", list);
+		}
+		else
+		{
+			WhUserType wh=service.getOneWhUserType(id);
+			mav.addObject("list", Arrays.asList(wh));
+		}
 		return mav;
-
 	}
-
 	@RequestMapping("/pdf")
-	public ModelAndView showPdf()
+	public ModelAndView showPdf(@RequestParam(value = "id",
+	required = false)Integer id)
 	{
 		ModelAndView mav=new ModelAndView();
 		mav.setView(new WhUserTypePdfView());
-		List<WhUserType> list=service.getAllWhUserTypes();
-		mav.addObject("list", list);
+		if(id==null)
+		{
+			List<WhUserType> list=service.getAllWhUserTypes();
+			mav.addObject("list", list);
+		}
+		else
+		{
+			WhUserType wh=service.getOneWhUserType(id);
+			mav.addObject("list", Arrays.asList(wh));
+		}
 		return mav;
 	}
+
 }

@@ -29,6 +29,8 @@
 </tr>
 </table>
 <hr>
+<a href="excel?id=${ob.orderId}">Export to EXCEL</a>|<a href="pdf?id=${ob.orderId}">Export to PDF</a>
+<hr>
            <a href="register">HOME PAGE</a>
 </body>
 </html>
