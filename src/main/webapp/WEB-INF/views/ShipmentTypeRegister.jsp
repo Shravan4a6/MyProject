@@ -117,7 +117,5 @@
 		<!-- card end -->
 	</div>
 	<!-- container end -->
-
-	<a href="all">View Data</a>
 </body>
 </html>

@@ -19,22 +19,22 @@
 			<div class="card-body">
 				<a href="excel"><img src="../resources/images/ExcelDownload.png"
 					width="100" height="40" /></a> <a href="pdf"><img
-					src="../resources/images/PdfDownload.png" width="100" height="40" /></a>
+					src="../resources/images/PdfDownload.png" class="rounded float-right" width="100" height="40" /></a>
 				<c:choose>
 					<c:when test="${!empty list }">
 						<table class="table table-hover">
-							<tr class="bg-success text-white">
+							<tr class="bg-success text-white text-center">
 								<th>ID</th>
 								<th>MODE</th>
 								<th>CODE</th>
 								<th>ENABLE</th>
 								<th>GRADE</th>
-								<th>NOTE</th>
+								<th >NOTE</th>
 								<th colspan="3">OPERATIONS</th>
 							</tr>
 							<!-- for(ShipmentType ob:list){} -->
 							<c:forEach items="${list}" var="ob">
-								<tr>
+								<tr class="text-center">
 									<td>${ob.shipId}</td>
 									<td>${ob.shipMode}</td>
 									<td>${ob.shipCode}</td>
@@ -87,7 +87,5 @@
 
 	</div>
 	<!-- container end -->
-
-	<a href="register">HOME PAGE</a>
 </body>
 </html>
