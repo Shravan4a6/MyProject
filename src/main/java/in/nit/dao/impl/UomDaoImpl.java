@@ -39,4 +39,14 @@ public class UomDaoImpl implements IUomDao {
 		ht.update(ob);
 		
 	}
+	
+	
+	public List<Object[]> getUomIdAndUomModel() {
+		
+		String hql="select uomId,uomModel from in.nit.model.Uom";
+		@SuppressWarnings({ "unchecked", "deprecation" })
+		List<Object[]> list=(List<Object[]>) ht.find(hql);
+		
+		return list;
+	}
 }

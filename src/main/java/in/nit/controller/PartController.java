@@ -1,6 +1,7 @@
 package in.nit.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,9 +12,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import in.nit.model.Part;
-import in.nit.model.Uom;
 import in.nit.service.IPartService;
 import in.nit.service.IUomService;
+import in.nit.util.CommonUtil;
 
 
 
@@ -30,8 +31,10 @@ public class PartController {
 	
 	private void commonUi(Model model) {
 		
-		List<Uom> uomList=uomService.getAllUoms();
-		model.addAttribute("uomList", uomList);
+		List<Object[]> uomList=uomService.getUomIdAndUomModel();
+		Map<Integer,String> uomMap=CommonUtil.convert(uomList);
+		
+		model.addAttribute("uomMap", uomMap);
 		
 	}
 
@@ -136,5 +139,9 @@ public class PartController {
 	 * mav; }
 	 */
 
-
+	
+	
+	
+	
+	
 }

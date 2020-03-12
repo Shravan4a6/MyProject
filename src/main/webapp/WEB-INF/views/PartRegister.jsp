@@ -17,12 +17,17 @@ Part Length  :<form:input path="partLen"/>
 Part Width   :<form:input path="partWid"/>
 Part Height  :<form:input path="partHgt"/>
 Base Cost    :<form:input path="baseCost"/>
-Base Currency:<form:input path="baseCurrency"/>
-Uom          :<form:select path="uomOb.uomId">
+Base Currency:<form:select path="baseCurrency">
+								<form:option value="">-SELECT-</form:option>
+								<form:option value="INR">INR</form:option>
+								<form:option value="USD">USD</form:option>
+								<form:option value="AUS">AUS</form:option>
+								<form:option value="ERU">ERU</form:option>
+							</form:select>
+
+Uom          :<form:select path="uomOb.uomId" class="form-control">
  	<form:option value="">--SELECT--</form:option>
- 	<form:options items="${uomList }"
- 				  itemValue="uomId"
- 				  itemLabel="uomModel"/>	
+ 	<form:options items="${uomMap}"/>	
  </form:select>            
 Description    :
                 <form:textarea path="note"/>

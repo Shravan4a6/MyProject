@@ -23,9 +23,10 @@ import in.nit.view.UomPdfView;
 @RequestMapping("/uom")
 public class UomController {
 
+	
 	@Autowired
 	private IUomService service;
-
+	
 	@RequestMapping("/register")
 	public String showReg(Model model ) {
 
@@ -141,4 +142,5 @@ public class UomController {
 		}
 		return mav;
 	}
+	
 }

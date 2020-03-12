@@ -19,13 +19,10 @@ Part Width   :<form:input path="partWid"/>
 Part Height  :<form:input path="partHgt"/>
 Base Cost    :<form:input path="baseCost"/>
 Base Currency:<form:input path="baseCurrency"/>
-<%-- 
-Enable Shipment:<form:select path="enbShip">
+Uom          :<form:select path="uomOb.uomId" class="form-control">
  	<form:option value="">--SELECT--</form:option>
- 	<form:option value="YES">YES</form:option>
- 	<form:option value="NO">NO</form:option>
- </form:select>
---%>                
+ 	<form:options items="${uomMap}"/>	
+ </form:select>            
 Description    :
                 <form:textarea path="note"/>
 

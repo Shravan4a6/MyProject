@@ -24,7 +24,7 @@
 	<th>BASE COST</th>
 	<th>BASE CURRENCY</th>
 	<th>NOTE</th>
-	<th>FK</th>
+	<th>UOM MODEL</th>
 	<th colspan="3">OPERATIONS</th>
 	</tr>
 	
@@ -38,7 +38,7 @@
 		<td>${ob.baseCost}</td>
 		<td>${ob.baseCurrency}</td>
 		<td>${ob.note}</td>
-		<td>${ob.uomOb.uomId}</td>
+		<td>${ob.uomOb.uomModel}</td>
 		<td><a href="delete?pid=${ob.partId}"><img alt="" src="../resources/images/DELETE.jpg" width="35" height="30" /></a></td>
 		<td><a href="edit?pid=${ob.partId}"><img alt="" src="../resources/images/EDIT.jpg" width="35" height="30" /></a></td>
 		<td><a href="view?pid=${ob.partId}"><img alt="" src="../resources/images/VIEW.jpg" width="35" height="30" /></a></td>

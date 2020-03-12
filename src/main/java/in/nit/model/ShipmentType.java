@@ -26,6 +26,9 @@ public class ShipmentType {
 	@Column(name="sdesc")
 	private String shipDesc;
 	
+
+	
+	
 	public ShipmentType() {
 		super();
 	}
