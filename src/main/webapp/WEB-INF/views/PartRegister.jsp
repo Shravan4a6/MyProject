@@ -12,12 +12,12 @@
 <hr>
 	<form:form action="save" method="post" modelAttribute="part">
 <pre>
-Part Code    :<form:input path="partCode"/>
-Part Length  :<form:input path="partLen"/>
-Part Width   :<form:input path="partWid"/>
-Part Height  :<form:input path="partHgt"/>
-Base Cost    :<form:input path="baseCost"/>
-Base Currency:<form:select path="baseCurrency">
+Part Code            :<form:input path="partCode"/>
+Part Length          :<form:input path="partLen"/>
+Part Width           :<form:input path="partWid"/>
+Part Height          :<form:input path="partHgt"/>
+Base Cost            :<form:input path="baseCost"/>
+Base Currency        :<form:select path="baseCurrency">
 								<form:option value="">-SELECT-</form:option>
 								<form:option value="INR">INR</form:option>
 								<form:option value="USD">USD</form:option>
@@ -25,12 +25,24 @@ Base Currency:<form:select path="baseCurrency">
 								<form:option value="ERU">ERU</form:option>
 							</form:select>
 
-Uom          :<form:select path="uomOb.uomId" class="form-control">
+Uom                  :<form:select path="uomOb.uomId" class="form-control">
  	<form:option value="">--SELECT--</form:option>
  	<form:options items="${uomMap}"/>	
  </form:select>            
-Description    :
-                <form:textarea path="note"/>
+
+OrderMethod(SALE)    :<form:select path="omSaleOb.orderId" class="form-control">
+ 	<form:option value="">--SELECT--</form:option>
+ 	<form:options items="${omSaleMap}"/>	
+ </form:select>
+OrderMethod(PURCHASE):<form:select path="omPurchaseOb.orderId" class="form-control">
+ 	<form:option value="">--SELECT--</form:option>
+ 	<form:options items="${omPurchaseMap}"/>	
+ </form:select>            
+
+
+
+Description          :
+                      <form:textarea path="note"/>
 
 	<input type="submit" value="CREATE PART">
 </pre>

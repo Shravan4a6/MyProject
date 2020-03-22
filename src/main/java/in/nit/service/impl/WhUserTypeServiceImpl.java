@@ -46,5 +46,11 @@ public class WhUserTypeServiceImpl implements IWhUserTypeService {
 		dao.updateWhUserType(ob);
 		
 	}
+
+	@Transactional(readOnly = true)
+	public List<Object[]> getWhUserIdAndCode(String userType) {
+		
+		return dao.getWhUserIdAndCode(userType);
+	}
 	
 }

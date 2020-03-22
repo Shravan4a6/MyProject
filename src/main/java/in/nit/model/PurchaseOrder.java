@@ -3,6 +3,8 @@ package in.nit.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -17,13 +19,35 @@ public class PurchaseOrder {
 	private String qltyCheck;
 	private String status;
 	private String note;
+
+	@ManyToOne
+	@JoinColumn(name="shipIdFk")
+	private ShipmentType sob;
+	
+	@ManyToOne
+	@JoinColumn(name="vendorIdFk")
+	private WhUserType vendorOb;
+	
+	
+	
 	public PurchaseOrder() {
 		super();
 	}
+
 	public PurchaseOrder(Integer purchaseId) {
 		super();
 		this.purchaseId = purchaseId;
 	}
+	
+	public ShipmentType getSob() {
+		return sob;
+	}
+
+	public void setSob(ShipmentType sob) {
+		this.sob = sob;
+	}
+
+
 	public Integer getPurchaseId() {
 		return purchaseId;
 	}
@@ -60,10 +84,21 @@ public class PurchaseOrder {
 	public void setNote(String note) {
 		this.note = note;
 	}
+	
+	
+	public WhUserType getVendorOb() {
+		return vendorOb;
+	}
+
+	public void setVendorOb(WhUserType vendorOb) {
+		this.vendorOb = vendorOb;
+	}
+
 	@Override
 	public String toString() {
 		return "PurchaseOrder [purchaseId=" + purchaseId + ", orderCode=" + orderCode + ", refNumber=" + refNumber
-				+ ", qltyCheck=" + qltyCheck + ", status=" + status + ", note=" + note + "]";
+				+ ", qltyCheck=" + qltyCheck + ", status=" + status + ", note=" + note + ", sob=" + sob + ", vendorOb="
+				+ vendorOb + "]";
 	}
 	
 	

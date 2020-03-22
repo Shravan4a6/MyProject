@@ -48,4 +48,10 @@ public class OrderMethodServiceImpl implements IOrderMethodService {
 		dao.updateOrderMethod(ob);
 		
 	}
+	
+	@Transactional(readOnly = true)
+	public List<Object[]> getOrderIdAndCode(String mode) {
+		
+		return dao.getOrderIdAndCode(mode);
+	}
 }

@@ -17,5 +17,6 @@ public interface IShipmentTypeService {
 	
 	public List<Object[]> getShipmentModeCount();
 	
+	List<Object[]> getShipmentIdAndCode();
 	
 }

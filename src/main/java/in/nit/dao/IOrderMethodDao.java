@@ -14,5 +14,7 @@ public interface IOrderMethodDao {
 	OrderMethod getOneOrderMethod(Integer id);
 	
 	void updateOrderMethod(OrderMethod ob);
-	
+
+	public List<Object[]> getOrderIdAndCode(String mode);
+
 }

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import in.nit.model.Part;
+import in.nit.service.IOrderMethodService;
 import in.nit.service.IPartService;
 import in.nit.service.IUomService;
 import in.nit.util.CommonUtil;
@@ -29,12 +30,25 @@ public class PartController {
 	@Autowired
 	private IUomService uomService;
 	
+	@Autowired
+	private IOrderMethodService orderMethodService;
+	
 	private void commonUi(Model model) {
 		
 		List<Object[]> uomList=uomService.getUomIdAndUomModel();
 		Map<Integer,String> uomMap=CommonUtil.convert(uomList);
 		
 		model.addAttribute("uomMap", uomMap);
+		
+		List<Object[]> omSaleList=orderMethodService.getOrderIdAndCode("SALE");
+		Map<Integer,String> omSaleMap=CommonUtil.convert(omSaleList);
+		
+		model.addAttribute("omSaleMap", omSaleMap);
+		
+		List<Object[]> omPurchaseList=orderMethodService.getOrderIdAndCode("PURCHASE");
+		Map<Integer,String> omPurchaseMap=CommonUtil.convert(omPurchaseList);
+		
+		model.addAttribute("omPurchaseMap", omPurchaseMap);
 		
 	}
 
