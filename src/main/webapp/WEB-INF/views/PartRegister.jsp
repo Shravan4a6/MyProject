@@ -1,55 +1,202 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1" isELIgnored="false"%>
-<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Part Register Page</title>
+<title>PART Register Page</title>
 </head>
 <body>
-	<h2>Welcome to Part Register Page</h2>
-<hr>
-	<form:form action="save" method="post" modelAttribute="part">
-<pre>
-Part Code            :<form:input path="partCode"/>
-Part Length          :<form:input path="partLen"/>
-Part Width           :<form:input path="partWid"/>
-Part Height          :<form:input path="partHgt"/>
-Base Cost            :<form:input path="baseCost"/>
-Base Currency        :<form:select path="baseCurrency">
-								<form:option value="">-SELECT-</form:option>
-								<form:option value="INR">INR</form:option>
-								<form:option value="USD">USD</form:option>
-								<form:option value="AUS">AUS</form:option>
-								<form:option value="ERU">ERU</form:option>
-							</form:select>
+	<%@include file="UserMenu.jsp"%>
+	<div class="jumbotron big-banner"
+		style="height: 500px; padding-top: 150px;">
+		<div class="container">
 
-Uom                  :<form:select path="uomOb.uomId" class="form-control">
- 	<form:option value="">--SELECT--</form:option>
- 	<form:options items="${uomMap}"/>	
- </form:select>            
+			<div class="card">
 
-OrderMethod(SALE)    :<form:select path="omSaleOb.orderId" class="form-control">
- 	<form:option value="">--SELECT--</form:option>
- 	<form:options items="${omSaleMap}"/>	
- </form:select>
-OrderMethod(PURCHASE):<form:select path="omPurchaseOb.orderId" class="form-control">
- 	<form:option value="">--SELECT--</form:option>
- 	<form:options items="${omPurchaseMap}"/>	
- </form:select>            
+				<div
+					class="card-header bg-primary text-center text-white text-uppercase">
+					<h3>Welcome to Part Register Page</h3>
+				</div>
+
+				<div class="card-body">
+
+					<form:form action="save" method="POST" modelAttribute="part">
 
 
+						<div class="row">
+							<div class="col-4">
+								<label for="partCode">Part Code</label>
+							</div>
+							<div class="col-4">
+								<form:input path="partCode" class="form-control" />
+							</div>
+							<div class="col-4">
+								<!-- Error Message -->
+							</div>
+						</div>
 
-Description          :
-                      <form:textarea path="note"/>
+						<div class="row">
+							<div class="col-4">
+								<label for="partLen">Part Length</label>
+							</div>
+							<div class="col-4">
+								<form:input path="partLen" class="form-control" />
+							</div>
+							<div class="col-4">
+								<!-- Error Message -->
+							</div>
+						</div>
 
-	<input type="submit" value="CREATE PART">
-</pre>
-	</form:form>
-<hr>
-${message}
-<hr>	
-<a href="all">View Data</a>	
+						<div class="row">
+							<div class="col-4">
+								<label for="partWid">Part Width</label>
+							</div>
+							<div class="col-4">
+								<form:input path="partWid" class="form-control" />
+							</div>
+							<div class="col-4">
+								<!-- Error Message -->
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-4">
+								<label for="partHgt">Part Height</label>
+							</div>
+							<div class="col-4">
+								<form:input path="partHgt" class="form-control" />
+							</div>
+							<div class="col-4">
+								<!-- Error Message -->
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-4">
+								<label for="baseCost">Base Cost</label>
+							</div>
+							<div class="col-4">
+								<form:input path="baseCost" class="form-control" />
+							</div>
+							<div class="col-4">
+								<!-- Error Message -->
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-4">
+								<label for="baseCurrency">Base Currency</label>
+							</div>
+							<div class="col-4">
+								<form:select path="baseCurrency" class="form-control">
+									<form:option value="">-SELECT-</form:option>
+									<form:option value="INR">INR</form:option>
+									<form:option value="USD">USD</form:option>
+									<form:option value="AUS">AUS</form:option>
+									<form:option value="ERU">ERU</form:option>
+								</form:select>
+							</div>
+							<div class="col-4">
+								<!-- Error Message -->
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-4">
+								<label for="uomOb.uomId">Uom</label>
+							</div>
+							<div class="col-4">
+								<form:select path="uomOb.uomId" class="form-control">
+									<form:option value="">-SELECT-</form:option>
+									<form:options items="${uomMap}" />
+								</form:select>
+							</div>
+							<div class="col-4">
+								<!-- Error Message -->
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-4">
+								<label for="omSaleOb.orderId">OrderMethod(SALE)</label>
+							</div>
+							<div class="col-4">
+								<form:select path="omSaleOb.orderId" class="form-control">
+									<form:option value="">-SELECT-</form:option>
+									<form:options items="${omSaleMap}" />
+								</form:select>
+							</div>
+							<div class="col-4">
+								<!-- Error Message -->
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-4">
+								<label for="omPurchaseOb.orderId">OrderMethod(PURCHASE)</label>
+							</div>
+							<div class="col-4">
+								<form:select path="omPurchaseOb.orderId" class="form-control">
+									<form:option value="">-SELECT-</form:option>
+									<form:options items="${omPurchaseMap}" />
+								</form:select>
+							</div>
+							<div class="col-4">
+								<!-- Error Message -->
+							</div>
+						</div>
+
+
+
+						<div class="row">
+							<div class="col-4">
+								<label for="note">DESCRIPTION</label>
+							</div>
+							<div class="col-4">
+								<form:textarea path="note" class="form-control" />
+
+							</div>
+							<div class="col-4"></div>
+						</div>
+
+						<div class="row">
+							<div class="col-4"></div>
+							<div class="col-4">
+								<input type="submit" value="Create" class="btn btn-success" />
+								<input type="reset" value="Clear" class="btn btn-danger" />
+
+							</div>
+						</div>
+					</form:form>
+				</div>
+				<c:if test="${!empty message }">
+					<div class="card-footer bg-info text-white text-center">
+						<b>${message}</b>
+					</div>
+				</c:if>
+			</div>
+			<!-- card end -->
+		</div>
+		<!-- container end -->
+
+	</div>
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

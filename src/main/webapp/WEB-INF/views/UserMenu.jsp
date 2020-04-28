@@ -11,10 +11,14 @@
 	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="../resources/css/style.css">
 
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-	<a class="navbar-brand" href="#">WAREHOUSE APP</a>
+	<a class="navbar-brand" href="#"> <!-- WAREHOUSE APP --> <img
+		src="../resources/images/app.jpg" class="rounded" width="150"
+		height="80" />
+	</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse"
 		data-target="#navbarSupportedContent"
 		aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -25,16 +29,15 @@
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<ul class="navbar-nav mr-auto">
 			<li class="nav-item active"><a class="nav-link" href="#"><img
-					src="../resources/images/home.jpg" class="rounded" width="100" height="60" />
-					<span class="sr-only">(current)</span>
-			</a></li>
+					src="../resources/images/home.jpg" class="rounded" width="100"
+					height="60" /> <span class="sr-only">(current)</span> </a></li>
 
 			<!-- one option start-->
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 				role="button" data-toggle="dropdown" aria-haspopup="true"
-				aria-expanded="false"> <img
-					src="../resources/images/wh.jpg" class="rounded" width="100" height="60" /> </a>
+				aria-expanded="false"> SHIPMENT <!-- <img src="../resources/images/wh.jpg" class="rounded" width="100" height="60" /> -->
+			</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 					<a class="dropdown-item" href="${url}/shipment/register">REGISTER</a>
 					<div class="dropdown-divider"></div>
@@ -45,22 +48,87 @@
 				</div></li>
 			<!-- one option end -->
 
+			<!-- one option start-->
+			<li class="nav-item dropdown"><a
+				class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+				role="button" data-toggle="dropdown" aria-haspopup="true"
+				aria-expanded="false"> UOM<!-- <img src="../resources/images/wh.jpg" class="rounded" width="100" height="60" /> -->
+			</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="${url}/uom/register">REGISTER</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="${url}/uom/all">ALL</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="${url}/uom/charts">CHARTS</a>
 
+				</div></li>
+			<!-- one option end -->
+			
+			<!-- one option start-->
+			<li class="nav-item dropdown"><a
+				class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+				role="button" data-toggle="dropdown" aria-haspopup="true"
+				aria-expanded="false"> WHUSERTYPE<!-- <img src="../resources/images/wh.jpg" class="rounded" width="100" height="60" /> -->
+			</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="${url}/whuser/register">REGISTER</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="${url}/whuser/all">ALL</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="${url}/whuser/charts">CHARTS</a>
+
+				</div></li>
+			<!-- one option end -->
+			
+			
+						
 			<!-- one option start-->
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 				role="button" data-toggle="dropdown" aria-haspopup="true"
 				aria-expanded="false"> ORDER METHOD </a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-					<a class="dropdown-item" href="${url}/ordermethod/register">REGISTER</a>
+					<a class="dropdown-item" href="${url}/om/register">REGISTER</a>
 					<div class="dropdown-divider"></div>
-					<a class="dropdown-item" href="${url}/ordermethod/all">ALL</a>
+					<a class="dropdown-item" href="${url}/om/all">ALL</a>
 					<div class="dropdown-divider"></div>
-					<a class="dropdown-item" href="${url}/ordermethod/charts">CHARTS</a>
+					<a class="dropdown-item" href="${url}/om/charts">CHARTS</a>
 
 				</div></li>
 			<!-- one option end -->
+		
+		<!-- one option start-->
+			<li class="nav-item dropdown"><a
+				class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+				role="button" data-toggle="dropdown" aria-haspopup="true"
+				aria-expanded="false"> PART </a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="${url}/part/register">REGISTER</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="${url}/part/all">ALL</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="${url}/part/charts">CHARTS</a>
 
+				</div></li>
+			<!-- one option end -->
+		
+		<!-- one option start-->
+			<li class="nav-item dropdown"><a
+				class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+				role="button" data-toggle="dropdown" aria-haspopup="true"
+				aria-expanded="false"> PURCHASE ORDER </a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="${url}/po/register">REGISTER</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="${url}/po/all">ALL</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="${url}/po/charts">CHARTS</a>
+
+				</div></li>
+			<!-- one option end -->
+		
+		
+		
 		</ul>
 		<form class="form-inline my-2 my-lg-0">
 			<input class="form-control mr-sm-2" type="search"
@@ -68,4 +136,6 @@
 			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 		</form>
 	</div>
+	
+
 </nav>

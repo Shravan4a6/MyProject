@@ -61,7 +61,9 @@
 							<form:textarea path="uomDesc" class="form-control" />
 
 						</div>
-						<div class="col-4 font-italic" id="uomDescError"></div>
+						<div class="col-4 font-italic" id="uomDescError">
+							<!-- Error Message -->
+						</div>
 					</div>
 
 					<div class="row">

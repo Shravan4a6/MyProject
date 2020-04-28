@@ -1,0 +1,28 @@
+@charset "ISO-8859-1";
+
+body {
+	background:url("../images/Lighthouse.jpg.jpg")no-repeat center center fixed; 
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+	
+}
+
+.bg-dark1{
+	background-color:#0a2144 !important;
+}
+.bg-dark2{
+	background-color:#0000006b !important;
+}
+
+
+.input-group-prepend{
+	width: 28%;
+}
+
+.input-group-text {
+	width: 100%;
+	font-size:13px;
+	font-weight:bold;
+}

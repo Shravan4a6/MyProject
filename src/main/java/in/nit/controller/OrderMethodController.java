@@ -18,7 +18,7 @@ import in.nit.view.OrderMethodExcelView;
 import in.nit.view.OrderMethodPdfView;
 
 @Controller
-@RequestMapping("/ordermethod")
+@RequestMapping("/om")
 public class OrderMethodController {
 
 	@Autowired
