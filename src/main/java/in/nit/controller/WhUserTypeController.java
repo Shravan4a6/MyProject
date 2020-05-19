@@ -14,6 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import in.nit.model.WhUserType;
 import in.nit.service.IWhUserTypeService;
+import in.nit.util.EmailUtil;
 import in.nit.view.WhUserTypeExcelView;
 import in.nit.view.WhUserTypePdfView;
 
@@ -23,6 +24,9 @@ public class WhUserTypeController {
 
 	@Autowired
 	private IWhUserTypeService service;
+	
+	@Autowired
+	private EmailUtil emailUtil;
 
 	@RequestMapping("/register")
 	public String showReg(Model model)
@@ -36,6 +40,22 @@ public class WhUserTypeController {
 	{
 		Integer id=service.saveWhUserType(whUserType);
 		String message="WhUser '"+id+"'Saved";
+		
+		if(id!=null) {
+			//send Email
+			String text="Welcome to WhUser ="+whUserType.getUserCode()
+			+",type="+whUserType.getUserType()
+			+",All the Best";
+			
+			boolean sent=emailUtil.sendEmail(whUserType.getUserMail(),"Welcome WhUser",text );
+			
+			if(sent)
+				message+=",Email Also Sent";
+			else
+				message+=",Email Sending Failed";
+			
+		}
+		
 		model.addAttribute("message", message);
 		model.addAttribute("whUserType", new WhUserType());
 		return "WhUserTypeRegister";
