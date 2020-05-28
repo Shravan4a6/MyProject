@@ -31,7 +31,8 @@ public class UomController {
 	public String showReg(Model model ) {
 
 		model.addAttribute("uom", new Uom());
-		return "UomRegister";
+		 return "UomRegister"; 
+		/* return "index"; */
 
 	}	
 

@@ -8,6 +8,7 @@ import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
+
 @Component
 public class EmailUtil {
 
@@ -36,6 +37,7 @@ public class EmailUtil {
 		 		
 		 		helper.setTo(to);
 		 		helper.setSubject(subject);
+		 		helper.setText(text);
 		 		if(cc!=null && cc.length>0)
 		 			helper.setCc(cc);
 		 		if(bcc!=null && bcc.length>0)

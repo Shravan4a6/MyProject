@@ -89,27 +89,21 @@ public class AppConfig implements WebMvcConfigurer {
 	
 	@Bean
 	public JavaMailSender mailSender() {
-		
 		JavaMailSenderImpl jms=new JavaMailSenderImpl();
 		jms.setHost(env.getProperty("mail.host"));
 		jms.setPort(env.getProperty("mail.port",Integer.class));
 		jms.setUsername(env.getProperty("mail.user"));
 		jms.setPassword(env.getProperty("mail.pwd"));
 		jms.setJavaMailProperties(mailProps());
-	
 		return jms;
-		
-	
 	}
 	
 	
 	@Bean
 	public Properties mailProps() {
-		
 		Properties p=new Properties();
-		p.put("mail.smtp.STARTTLS.enable",true);
-		p.put("mail.smtp.auth",true);
-		
+		p.put("mail.smtp.starttls.enable", env.getProperty("mail.secure.enable")); //HTTPS
+		p.put("mail.smtp.auth", env.getProperty("mail.auth.enable")); //HTTPS
 		return p;
 	}
 	
